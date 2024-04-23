@@ -7,21 +7,21 @@
 
 import UIKit
 
-class InstaTypeCustomCell: UITableViewCell {
-    
+final class InstaTypeCustomCell: UITableViewCell {
+        
     static let reuseIdentifier = "InstaCell"
     
-    private lazy var mainImage: UIImageView = {
-       let image = UIImage(named: "-6nUiakGXDU")
+    lazy var mainImage: UIImageView = {
+       let image = UIImage(named: "0")
         let mainImage = UIImageView(image: image)
-        mainImage.contentMode = .scaleAspectFill
+        mainImage.contentMode = .scaleToFill
         mainImage.translatesAutoresizingMaskIntoConstraints = false
         return mainImage
     }()
     
-    private lazy var mainLikeButton: UIButton = {
+    lazy var mainLikeButton: UIButton = {
         let button = UIButton()
-        button.setImage(UIImage(named: "Active"), for: .normal)
+        button.setImage(UIImage(named: "No Active"), for: .normal)
         button.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         button.heightAnchor.constraint(equalToConstant: 44).isActive = true
         button.widthAnchor.constraint(equalToConstant: 44).isActive = true
@@ -45,9 +45,13 @@ class InstaTypeCustomCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     @objc
     private func didTapLike() {
-        mainLikeButton.setImage(UIImage(named: "No Active"), for: .normal)
+        let isActive = mainLikeButton.currentImage == UIImage(named: "Active")
+        let newImage = isActive ? UIImage(named: "No Active") : UIImage(named: "Active")
+        mainLikeButton.setImage(newImage, for: .normal)
+
     }
     
     private func setupContraints() {
@@ -56,11 +60,13 @@ class InstaTypeCustomCell: UITableViewCell {
         contentView.addSubview(mainLabel)
         contentView.addSubview(mainLikeButton)
         
+        let margins = contentView.layoutMarginsGuide
+        
         NSLayoutConstraint.activate([
             mainImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             mainImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            mainImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-            mainImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            mainImage.topAnchor.constraint(equalTo: margins.topAnchor),
+            mainImage.bottomAnchor.constraint(equalTo: margins.bottomAnchor),
             
             mainLikeButton.trailingAnchor.constraint(equalTo: mainImage.trailingAnchor),
             mainLikeButton.topAnchor.constraint(equalTo: mainImage.topAnchor),
@@ -68,5 +74,7 @@ class InstaTypeCustomCell: UITableViewCell {
             mainLabel.leadingAnchor.constraint(equalTo: mainImage.leadingAnchor, constant: 8),
             mainLabel.bottomAnchor.constraint(equalTo: mainImage.bottomAnchor, constant: -8)
         ])
+        mainImage.layer.cornerRadius = 16
+        mainImage.layer.masksToBounds = true
     }
 }

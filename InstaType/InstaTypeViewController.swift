@@ -7,12 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+ final class InstaTypeViewController: UIViewController {
     
     // MARK: - Public Properties
     
     // MARK: - Private Properties
-    private let words = ["18 апреля 2024"]
+    private let words: [String] = Array(0...24).map {"\($0)"}
+    
+    private lazy var dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        return formatter
+    }()
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -50,7 +57,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
+extension InstaTypeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return words.count
     }
@@ -59,11 +66,37 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: InstaTypeCustomCell.reuseIdentifier, 
                                                        for: indexPath) as? InstaTypeCustomCell else { return UITableViewCell() }
         cell.mainLabel.text = words[indexPath.row]
+        cell.backgroundColor = .ypBlack
+        cell.selectionStyle = .none
+        if let image = UIImage(named: words[indexPath.row]) {
+            cell.mainImage.image = UIImage(named: words[indexPath.row])
+        }
+        cell.mainLabel.text = dateFormatter.string(from: Date())
+        let isLiked = indexPath.row % 2 == 0
+        let likeImage = isLiked ? UIImage(named: "No Active") : UIImage(named: "Active")
+        cell.mainLikeButton.setImage(likeImage, for: .normal)
         return cell
     }
 }
 
 // MARK: - UITableViewDelegate
-extension ViewController: UITableViewDelegate {
+extension InstaTypeViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let image = UIImage(named: words[indexPath.row]) else {
+            return 0
+        }
+        let imageInsets = UIEdgeInsets(top: 0, left: 16, bottom: 4, right: 16)
+        let imageViewWidth = tableView.bounds.width - imageInsets.left - imageInsets.right
+        let imageWidth = image.size.width
+        let scale = imageViewWidth / imageWidth
+        let cellHeight = image.size.height * scale + imageInsets.top + imageInsets.bottom
+        return cellHeight
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = InstaProfileViewController()
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
 }
 
