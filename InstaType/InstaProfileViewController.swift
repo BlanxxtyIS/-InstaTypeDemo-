@@ -72,7 +72,7 @@ final class InstaProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ypBlack
-        setupUI()
+        setupLifecycle()
     }
     
     // MARK: - Public Methods
@@ -80,10 +80,10 @@ final class InstaProfileViewController: UIViewController {
     // MARK: - Private Methods
     @objc
     private func exitButtonClicked() {
-        print("Выйти - выйти")
+        //MARK: - ЛОГИКА ВЫХОДА
     }
     
-    private func setupUI() {
+    private func setupLifecycle() {
         view.addSubview(profileInfoStack)
         view.addSubview(exitProfileButton)
         view.addSubview(profileImage)

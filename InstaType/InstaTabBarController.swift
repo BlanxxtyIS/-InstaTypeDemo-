@@ -11,13 +11,23 @@ class InstaTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTabBar()
+    }
+    
+    private func setupTabBar() {
+        tabBar.barTintColor = .ypBlack
+        tabBar.tintColor = .ypWhite //при выборе
+        tabBar.unselectedItemTintColor = .ypGray
         
         let iTypeVc = InstaTypeViewController()
-        iTypeVc.tabBarItem = UITabBarItem(title: "Home", image: UIImage(named: ""), tag: 0)
+        let iTypeNavController = UINavigationController(rootViewController: iTypeVc)
+        iTypeNavController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Main"), tag: 0)
         
         let iProfileVc = InstaProfileViewController()
-        iProfileVc.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(named: ""), tag: 1)
+        let iProfileNavController = UINavigationController(rootViewController: iProfileVc)
         
-        viewControllers = [iTypeVc, iProfileVc]
+        iProfileNavController.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "Profile"), tag: 1)
+        
+        viewControllers = [iTypeNavController, iProfileNavController]
     }
 }

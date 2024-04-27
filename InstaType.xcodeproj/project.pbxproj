@@ -10,10 +10,10 @@
 		F456F58E2BCFF32400EFBD23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456F58D2BCFF32400EFBD23 /* AppDelegate.swift */; };
 		F456F5902BCFF32400EFBD23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456F58F2BCFF32400EFBD23 /* SceneDelegate.swift */; };
 		F456F5922BCFF32400EFBD23 /* InstaTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F456F5912BCFF32400EFBD23 /* InstaTypeViewController.swift */; };
-		F456F5952BCFF32400EFBD23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F456F5932BCFF32400EFBD23 /* Main.storyboard */; };
 		F456F5972BCFF32600EFBD23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F456F5962BCFF32600EFBD23 /* Assets.xcassets */; };
 		F456F59A2BCFF32600EFBD23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F456F5982BCFF32600EFBD23 /* LaunchScreen.storyboard */; };
 		F4913C392BD6BFAA00DDA488 /* InstaProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4913C382BD6BFAA00DDA488 /* InstaProfileViewController.swift */; };
+		F49793D52BDD177800DF3073 /* SingeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49793D42BDD177800DF3073 /* SingeImageViewController.swift */; };
 		F4C775542BD159CE009EF5A1 /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C775532BD159CE009EF5A1 /* ExtensionColor.swift */; };
 		F4C775562BD15F3F009EF5A1 /* InstaTypeCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C775552BD15F3F009EF5A1 /* InstaTypeCustomCell.swift */; };
 		F4FC9BFF2BD81511003F432F /* InstaTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FC9BFE2BD81511003F432F /* InstaTabBarController.swift */; };
@@ -24,11 +24,11 @@
 		F456F58D2BCFF32400EFBD23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F456F58F2BCFF32400EFBD23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F456F5912BCFF32400EFBD23 /* InstaTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaTypeViewController.swift; sourceTree = "<group>"; };
-		F456F5942BCFF32400EFBD23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F456F5962BCFF32600EFBD23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F456F5992BCFF32600EFBD23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F456F59B2BCFF32600EFBD23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4913C382BD6BFAA00DDA488 /* InstaProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaProfileViewController.swift; sourceTree = "<group>"; };
+		F49793D42BDD177800DF3073 /* SingeImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingeImageViewController.swift; sourceTree = "<group>"; };
 		F4C775532BD159CE009EF5A1 /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 		F4C775552BD15F3F009EF5A1 /* InstaTypeCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaTypeCustomCell.swift; sourceTree = "<group>"; };
 		F4FC9BFE2BD81511003F432F /* InstaTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaTabBarController.swift; sourceTree = "<group>"; };
@@ -68,10 +68,10 @@
 				F456F58F2BCFF32400EFBD23 /* SceneDelegate.swift */,
 				F4FC9BFE2BD81511003F432F /* InstaTabBarController.swift */,
 				F456F5912BCFF32400EFBD23 /* InstaTypeViewController.swift */,
+				F49793D42BDD177800DF3073 /* SingeImageViewController.swift */,
 				F4913C382BD6BFAA00DDA488 /* InstaProfileViewController.swift */,
 				F4C775552BD15F3F009EF5A1 /* InstaTypeCustomCell.swift */,
 				F4C775532BD159CE009EF5A1 /* ExtensionColor.swift */,
-				F456F5932BCFF32400EFBD23 /* Main.storyboard */,
 				F456F5962BCFF32600EFBD23 /* Assets.xcassets */,
 				F456F5982BCFF32600EFBD23 /* LaunchScreen.storyboard */,
 				F456F59B2BCFF32600EFBD23 /* Info.plist */,
@@ -139,7 +139,6 @@
 			files = (
 				F456F59A2BCFF32600EFBD23 /* LaunchScreen.storyboard in Resources */,
 				F456F5972BCFF32600EFBD23 /* Assets.xcassets in Resources */,
-				F456F5952BCFF32400EFBD23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F456F5922BCFF32400EFBD23 /* InstaTypeViewController.swift in Sources */,
+				F49793D52BDD177800DF3073 /* SingeImageViewController.swift in Sources */,
 				F456F58E2BCFF32400EFBD23 /* AppDelegate.swift in Sources */,
 				F4FC9BFF2BD81511003F432F /* InstaTabBarController.swift in Sources */,
 				F456F5902BCFF32400EFBD23 /* SceneDelegate.swift in Sources */,
@@ -163,14 +163,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F456F5932BCFF32400EFBD23 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F456F5942BCFF32400EFBD23 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F456F5982BCFF32600EFBD23 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -314,7 +306,6 @@
 				INFOPLIST_FILE = InstaType/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -343,7 +334,6 @@
 				INFOPLIST_FILE = InstaType/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -7,7 +7,7 @@
 
 import UIKit
 
- final class InstaTypeViewController: UIViewController {
+final class InstaTypeViewController: UIViewController {
     
     // MARK: - Public Properties
     
@@ -42,6 +42,9 @@ import UIKit
     
     // MARK: - Private Methods
     private func setupLifecycle() {
+        navigationController?.navigationBar.barTintColor
+        = .ypBlack
+        navigationController?.navigationBar.tintColor = .ypWhite
         
         view.addSubview(tableView)
         view.backgroundColor = .ypBlack
@@ -94,7 +97,9 @@ extension InstaTypeViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = InstaProfileViewController()
+        let vc = SingeImageViewController()
+        let image = UIImage(named: "\(words[indexPath.row])")
+        vc.setImage(image: image)
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
     }
